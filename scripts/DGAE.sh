@@ -26,7 +26,7 @@ python main.py  --model $model \
 
 scheduler='None'
 patience=10
-data_path='./data/PEMS-BAY/raw_data.pkl'
+data_path='./data/PEMSBAY/raw_data.pkl'
 
 python main.py  --model $model \
                 --loss mse --patience $patience --num_workers 8  --scheduler $scheduler --stop_based 'train_total' --seed 20 \

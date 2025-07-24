@@ -24,7 +24,7 @@ python main.py  --model $model \
 
 
 
-data_path='./data/PEMS-BAY/raw_data.pkl'
+data_path='./data/PEMSBAY/raw_data.pkl'
 
 python main.py  --model $model \
                 --loss mse --patience $patience --num_workers 8  --scheduler None --stop_based 'train_total' --seed 20 \
