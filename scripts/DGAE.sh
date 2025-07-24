@@ -11,7 +11,7 @@ model=DGAE
 
 scheduler='step'
 patience=5
-data_path='/home/zqs/traffic_project/InductiveGNN/data/METR-LA/raw_data.pkl'
+data_path='./data/METR-LA/raw_data.pkl'
 python main.py  --model $model \
                 --loss mse --patience $patience --num_workers 8  --scheduler $scheduler --stop_based 'train_total' --seed 42 \
                 --max_epoch $mepoch --lr $lr --batch_size $bs --scheduler_patience $scheduler_patience\
@@ -19,14 +19,14 @@ python main.py  --model $model \
                 --t_mark --miss_mark \
                 --input_features $infea --target_features $tarfea \
                 --input_len 12 --pred_len 0 --look_back 12 --slide_step 12 \
-                --dloader_name METRLA --data_path $data_path --unknown_nodes_path '/home/zqs/traffic_project/InductiveGNN/data/METR-LA/unknown_nodes.npy' \
+                --dloader_name METRLA --data_path $data_path --unknown_nodes_path './data/METR-LA/unknown_nodes.npy' \
                 --fp_step 4 
 
 
 
 scheduler='None'
 patience=10
-data_path='/home/zqs/traffic_project/InductiveGNN/data/PEMS-BAY/raw_data.pkl'
+data_path='./data/PEMS-BAY/raw_data.pkl'
 
 python main.py  --model $model \
                 --loss mse --patience $patience --num_workers 8  --scheduler $scheduler --stop_based 'train_total' --seed 20 \
