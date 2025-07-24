@@ -14,7 +14,7 @@ DGAE consists of two main components: a graph auto-encoder (GAE) and Dirichlet e
 ![alt text](images/DGAE-2.png) Fig.2. Illustration of the refined DGAE architecture. The Graph Encoder structure, identical to the Graph Decoder, is omitted here for brevity. MLP denotes Multi-Layer Perceptron, ReLU denotes the activation function and ⊕ represents element-wise addition operation.
 
 ## Usage
-1. Download the dataset from [Google Cloud](https://drive.google.com/file/d/1VCPGVljJzdBTfhardAiOZNimxGDXiOiw/view?usp=sharing) and put them into ./data/
+1. Download the dataset from [Google Cloud](https://drive.google.com/drive/folders/1BGDSMqeC6jbwpHqFKOkpqL15WJdhRSPd?usp=drive_link) and put them into ./data/
 2. Train DGAE / Execute DEFP4D
 ```sh
 bash scripts/DGAE.sh
