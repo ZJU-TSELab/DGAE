@@ -35,7 +35,7 @@ python main.py  --model $model \
                 --t_mark --miss_mark \
                 --input_features $infea --target_features $tarfea \
                 --input_len 12 --pred_len 0 --look_back 12 --slide_step 12 \
-                --dloader_name PEMSBAY --data_path $data_path --unknown_nodes_num 81 \
+                --dloader_name PEMSBAY --data_path $data_path --unknown_nodes_path './data/PEMSBAY/unknown_nodes.npy' \
                 --fp_step 4 
 
 
@@ -49,5 +49,5 @@ python main.py  --model $model \
                 --t_mark --miss_mark \
                 --input_features $infea --target_features $tarfea \
                 --input_len 12 --pred_len 0 --look_back 12 --slide_step 12 \
-                --dloader_name PEMSD7M --data_path $data_path --unknown_nodes_num 57 \
+                --dloader_name PEMSD7M --data_path $data_path --unknown_nodes_path './data/PEMSD7M/unknown_nodes.npy' \
                 --fp_step 4 
