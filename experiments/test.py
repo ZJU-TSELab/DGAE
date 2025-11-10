@@ -3,7 +3,7 @@ from utils.logtool import detail_metrics
 from sklearn.metrics import r2_score
 
 
-def read_out(data_loaders, fig_path, criterions, exp_id, args, epoch=-1):
+def read_out(data_loaders, check_point_path, criterions, exp_id, args):
     part_nodes = {
         'known_nodes': args.best_total_y['known_nodes'],
         'unknown_nodes': args.best_total_y['unknown_nodes'],
@@ -23,6 +23,8 @@ def read_out(data_loaders, fig_path, criterions, exp_id, args, epoch=-1):
             continue
         elif 'train' in args.stop_based and mode == 'val':
             continue
+        check_point = check_point_path + f'best_{mode}_checkpoint.pth'
+        epoch = torch.load(check_point)['epoch']
         y = args.best_total_y[mode]['true']
         y_hat = args.best_total_y[mode]['pred']
         inverse_y = args.best_total_y[mode]['true_trans']

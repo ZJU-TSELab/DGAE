@@ -103,11 +103,9 @@ def train_model(model, optimizer, scheduler, data_loaders, criterions, args, wan
         prediction_path = args.best_prediction_path + args.exp_id + '/'
         with open(prediction_path + 'best_total_y.pkl', 'rb') as f:
             args.best_total_y = pickle.load(f)
-        fig_path = args.best_fig_path + args.exp_id + '/'
         check_point = check_point_path + 'best_train_checkpoint.pth'
-        best_model_dict = torch.load(check_point)
         best_epoch = best_model_dict['epoch']
-        read_out(data_loaders, fig_path, criterions, args.exp_id, args, best_epoch)
+        read_out(data_loaders, check_point_path, criterions, args.exp_id, args)
         print(f'Returning best train model from epoch {best_epoch}')
         model.load_state_dict(best_model_dict['state_dict'])
         return model
@@ -198,7 +196,7 @@ def train_model(model, optimizer, scheduler, data_loaders, criterions, args, wan
         check_point = args.best_checkpoint_path + 'best_train_checkpoint.pth'
     best_model_dict = torch.load(check_point)
     best_epoch = best_model_dict['epoch']
-    read_out(data_loaders, args.fig_path, criterions, args.exp_id, args, best_epoch)
+    read_out(data_loaders, args.best_checkpoint_path, criterions, args.exp_id, args)
     print(f'Returning best train model from epoch {best_epoch}')
     model.load_state_dict(best_model_dict['state_dict'])
     return model

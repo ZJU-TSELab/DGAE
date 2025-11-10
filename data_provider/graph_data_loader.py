@@ -78,12 +78,10 @@ class InductivePEMS(Dataset):
             self.unknown_nodes = np.load(self.unknown_nodes_path)
             self.known_nodes = np.setdiff1d(range(raw_data.shape[1]), self.unknown_nodes)
         else:
+            np.random.seed(0)
             self.unknown_nodes = np.random.choice(range(raw_data.shape[1]),
                                                   self.unknown_nodes_num,
                                                   replace=False)
-            # np.save(f'./data/{self.dloader_name}/unknown_nodes.npy',
-            #         self.unknown_nodes)
-            # self.unknown_nodes = np.load('data/PEMSD7M/unknown_nodes.npy')
             self.known_nodes = np.setdiff1d(range(raw_data.shape[1]), self.unknown_nodes)
         self.unknown_nodes = self.unknown_nodes.tolist()
         self.known_nodes = self.known_nodes.tolist()
